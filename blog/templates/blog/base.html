@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+      <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+      <meta name="HandheldFriendly" content="True" />
+      <meta name="MobileOptimized" content="320" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title> Django Blog </title>
+      <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+      <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7604652/646302/css/fonts.css" />
+  </head>
+  <body>
+  <header class="site-header">
+    <div class="site-title-wrapper">
+      <h1 class="site-title"><a href="/"> 흥청망청 블로그 </a></h1>
+    </div>
+  </header>
+  <div id="post-index" class="container">
+  <header class="post-header">
+    {% block header %}
+    <h1 class="post-title"> Welcome to 흥청망청</h1>
+    <p class="deck">
+      2019년 올해도 <a>흥청망청</a> 즐거운 계모임<br/>
+      여기는 <a>흥청망청 공식 블로그</a>로 입니다.
+    </p>
+    {% endblock %}
+  </header>
+
+  {% block content %}
+  {% endblock %}
+  </div>
+  <br/>
+  <footer class="footer">
+    <div class="container">
+        <p class="footer-copyright">
+          &copy; 충배.
+          <br>Powered by <a href="http://djangoproject.com/">흥청망청</a>.
+          <br>Theme based on <a href="https://github.com/roryg/ghostwriter">ghostwriter</a>
+          by <a href="http://jollygoodthemes.com">JollyGoodThemes</a>.
+        </p>
+    </div>
+  </footer>
+  </body>
+</html>
