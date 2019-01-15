@@ -7,6 +7,9 @@
 {% endblock %}
 {% block content %}
  <div class="post-content">
+   {% if post.photo %}
+      <img src="{{ post.photo.url }}"/>
+   {% endif %}
 {{post.content|linebreaksbr}}
  </div>
  <hr/>
