@@ -20,11 +20,11 @@ from .views import *
 from django.conf.urls.static import static
 from django.conf import settings
 
-
 urlpatterns = [
     path('', PostLV.as_view(), name='list'),
     path('post/', PostLV.as_view(), name='list'),
-    path('post/<slug>/', post_detail, name='detail')
+    path('post/<slug>/', post_detail, name='detail'),
+    path('join/', views.signup, name='join')
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
