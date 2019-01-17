@@ -19,12 +19,17 @@ from django.urls import path
 from .views import *
 from django.conf.urls.static import static
 from django.conf import settings
+from . import views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', PostLV.as_view(), name='list'),
+    path('index', PostLV.as_view(), name='index'),
     path('post/', PostLV.as_view(), name='list'),
     path('post/<slug>/', post_detail, name='detail'),
-    path('join/', views.signup, name='join')
+    path('join/', views.signup, name='join'),
+    path('login/', views.signin, name='login'),
+    path('logout/', views.logout, name='logout'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -142,3 +142,6 @@ django_heroku.settings(locals())
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+#로그인 이후 경로
+LOGIN_REDIRECT_URL = '/'
